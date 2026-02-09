@@ -23,7 +23,6 @@
 		extraConfig = {
 			init.defaultBranch = "main";
 			safe.directory = "/etc/nixos";
-			safe.directory = "/home/yarn/.dotfiles";
 		};
 	};
 
