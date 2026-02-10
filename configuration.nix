@@ -17,6 +17,9 @@
 
   services.getty.autologinUser = "yarn";
 
+  programs.ssh.startAgent = true;
+  services.openssh.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;		

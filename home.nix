@@ -22,7 +22,7 @@
 		settings = {
 			user = {
 				name = "yarn";
-				email = "flowercat@tuta.com";
+				email = "152090555+Yarnballer494@users.noreply.github.com";
 			};
 			init.defaultBranch = "main";
 			safe.directory = "/etc/nixos";
