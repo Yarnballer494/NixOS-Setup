@@ -18,9 +18,12 @@
 
 	programs.git = {
 		enable = true;
-		userName = "yarn";
-		userEmail = "flowercat@tuta.com";
-		extraConfig = {
+		lfs.enable = true;
+		settings = {
+			user = {
+				name = "yarn";
+				email = "flowercat@tuta.com";
+			};
 			init.defaultBranch = "main";
 			safe.directory = "/etc/nixos";
 		};
@@ -34,7 +37,7 @@
 			input = {
 				kb_layout = "de";
 				kb_options = "grp:win_space_toggle";
-			}
+			};
 			bind = [
 				# Main binds
 				"$mod, T, exec, kitty"
