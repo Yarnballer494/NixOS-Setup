@@ -25,13 +25,11 @@
     xwayland.enable = true;		
   };
 
-  services.greetd = {
+  services.displayManager.sddm = {
     enable = true;
-    settings = {
-      default_session = {
-        command = lib.mkDefault "${pkgs.tuigreet}/bin/tuigreet --time --cmd 'systemd-run --user --scope --unit=hyprland hyprland' --user-menu --user-menu-min-uid 1000";
-        user = "yarn";
-      };
+    theme = "catppuccin-mocha-mauve";
+    wayland = {
+      enable = true;
     };
   };
 
@@ -68,6 +66,10 @@
     kitty
     waybar
     hyprpaper
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+    })
   ];
 
   fonts.packages = with pkgs; [
