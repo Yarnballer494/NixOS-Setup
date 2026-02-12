@@ -28,7 +28,7 @@
 			safe.directory = "/etc/nixos";
 		};
 	};
-
+	
 	wayland.windowManager.hyprland = {
 		enable = true;
 		settings = {

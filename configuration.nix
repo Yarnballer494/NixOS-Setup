@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{config, lib, pkgs, ... }:
 
 {
-
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -15,8 +15,6 @@
 
   time.timeZone = "Europe/Berlin";
 
-  services.getty.autologinUser = "yarn";
-
   programs.ssh.startAgent = true;
   services.openssh.enable = true;
 
@@ -24,6 +22,8 @@
     enable = true;
     xwayland.enable = true;		
   };
+
+  programs.firefox.enable = true;
 
   services.displayManager.sddm = {
     enable = true;
@@ -36,6 +36,8 @@
   services.xserver = {
     xkb.layout = "de";
   };
+
+  services.getty.autologinUser = "yarn";
 
   #Enable CUPS to print documents.
   services.printing.enable = true;
@@ -55,8 +57,6 @@
     ];
   };
 
-  programs.firefox.enable = true;
-
   #List packages installed in system profile.
   #You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -66,6 +66,7 @@
     kitty
     waybar
     hyprpaper
+    rofi
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
       accent = "mauve";
