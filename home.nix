@@ -43,6 +43,10 @@
 				"$mod, T, exec, kitty"
 				"$mod, C, killactive,"
 				"$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+				
+				# Applications
+				"$mod, 1, exec, rofi"
+				"$mod, 2, exec, firefox"
 
 				# Move focus 
 				"$mod, left, movefocus, l"
