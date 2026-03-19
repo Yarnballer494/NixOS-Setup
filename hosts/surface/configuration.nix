@@ -132,7 +132,7 @@
 
   services.displayManager.sddm = {
     enable = true;
-    theme = "catpuccin-mocha-mauve";
+    theme = "catppuccin-mocha-mauve";
     wayland = {
       enable = true;
     };
