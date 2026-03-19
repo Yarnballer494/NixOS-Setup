@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
-
+ 
 let
     cfg = config.vim;
 in
@@ -10,17 +10,17 @@ in
 
     config = lib.mkIf cfg.enable {
         programs.vim = {
-           enable = true;
-           extraConfig = '' 
-               set number
-               set relativenumber
-               set expandtab
-               set shiftwidth=4
-               set softtabstop=4
-               set tabstop=4
-               set smartindent
-               syntax on
-           '';
+          enable = true;
+          plugins = with pkgs.vimPlugins; [];
+          extraConfig = ''
+              set number
+              set relativenumber
+              set expandtab
+              set shiftwidth=4
+              set softtabstop=4
+              set tabstop=4
+              syntax on     
+          '';
        };
     };
 }

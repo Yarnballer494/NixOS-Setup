@@ -145,7 +145,6 @@
   services.getty.autologinUser = "yarn";
 
   environment.systemPackages = with pkgs; [
-    vim
     wget
     git
     kitty
@@ -156,6 +155,9 @@
       flavor = "mocha";
       accent = "mauve";
     })
+    godot_4
+    vencord
+    bitwarden-desktop
   ];
 
   # Auto system upgrade

@@ -12,27 +12,43 @@ in
         wayland.windowManager.hyprland = {
             enable = true;
             settings = {
-                "$mod" = "SUPER";
-
                 input = {
                     kb_layout = "de";
                     kb_options = "grp:win_space_toggle";
                 };
                 bind = [
                     # Main binds
-                    "$mod, T, exec, kitty"
-                    "$mod, C, killactive,"
-                    "$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"             
+                    "SUPER, Q, exec, kitty"
+                    "SUPER, W, exec, rofi -show run"
+                    "SUPER, E, exec, firefox"
+                    "SUPER, C, killactive,"
+                    "SUPER, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"             
 
-                    # Applications
-                    "$mod, 1, exec, rofi -show run"
-                    "$mod, 2, exec, firefox"
+                    # Workspaces
+                    "SUPER, 1, focusworkspaceoncurrentmonitor, 1"
+                    "SUPER, 2, focusworkspaceoncurrentmonitor, 2"
+                    "SUPER, 3, focusworkspaceoncurrentmonitor, 3"
+                    "SUPER, 4, focusworkspaceoncurrentmonitor, 4"
+                    "SUPER, 5, focusworkspaceoncurrentmonitor, 5"
+                    "SUPER, 6, focusworkspaceoncurrentmonitor, 6"
+                    "SUPER, 7, focusworkspaceoncurrentmonitor, 7"
+                    "SUPER, 8, focusworkspaceoncurrentmonitor, 8"
+                    "SUPER, 9, focusworkspaceoncurrentmonitor, 9"
+                    "SUPERSHIFT, 1, movetoworkspace, 1"
+                    "SUPERSHIFT, 2, movetoworkspace, 2"
+                    "SUPERSHIFT, 3, movetoworkspace, 3"
+                    "SUPERSHIFT, 4, movetoworkspace, 4"
+                    "SUPERSHIFT, 5, movetoworkspace, 5"
+                    "SUPERSHIFT, 6, movetoworkspace, 6"
+                    "SUPERSHIFT, 7, movetoworkspace, 7"
+                    "SUPERSHIFT, 8, movetoworkspace, 8"
+                    "SUPERSHIFT, 9, movetoworkspace, 9"
 
                     # Move focus
-                    "$mod, left, movefocus, l"
-                    "$mod, right, movefocus, r"
-                    "$mod, up, movefocus, u"
-                    "$mod, down, movefocus, d"
+                    "SUPER, left, movefocus, l"
+                    "SUPER, right, movefocus, r"
+                    "SUPER, up, movefocus, u"
+                    "SUPER, down, movefocus, d"
                 ];
             };
         };      
