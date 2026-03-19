@@ -171,4 +171,6 @@
 
   # Enable touchpad support
   services.libinput.enable = true;
+
+  programs.waybar.enable = true;
 }
