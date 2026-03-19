@@ -59,6 +59,14 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
     };
+    
+    # Self added auto gc
+    gc = {
+      automatic = true;
+      dates = "20:00";
+      options = "--delete-older-than 2d";
+    };
+
     # Opinionated: disable channels
     channel.enable = false;
 
@@ -105,6 +113,7 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
 
+  # Stuff copied from old config
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -143,5 +152,23 @@
     waybar
     hyprpaper
     rofi
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+    })
   ];
+
+  # Auto system upgrade
+  system.autoUpgrade = {
+    enable = true;
+    flake = "/etc/nixos/flake.nix";
+    flags = [
+      "-L" # Print build logs
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
+
+  # Enable touchpad support
+  services.libinput.enable = true;
 }
