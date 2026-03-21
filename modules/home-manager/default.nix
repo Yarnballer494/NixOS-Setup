@@ -14,5 +14,6 @@
     ./hyprland.nix
     ./sh.nix
     ./vim.nix
+    ./nixvim.nix
   ];
 }

@@ -69,5 +69,5 @@
   hyprland.enable = true;
   sh.enable = true;
   vim.enable = true;
-
+  nixvim.enable = true;
 }
