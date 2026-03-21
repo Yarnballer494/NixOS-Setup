@@ -15,12 +15,17 @@
     
     # Nixvim
     nixvim.url = "github:nix-community/nixvim"; 
+    
+    # Sops
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    sops-nix,
     ...
   } @ inputs: let
     # Supported systems for your flake packages, shell, etc.
@@ -59,7 +64,8 @@
         specialArgs = {inherit inputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./hosts/surface/configuration.nix
+          ./hosts/surface/configuration.nix  	
+	  sops-nix.nixosModules.sops
         ];
       };
     };
