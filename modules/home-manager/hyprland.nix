@@ -53,6 +53,10 @@ in
                     "SUPER, up, movefocus, u"
                     "SUPER, down, movefocus, d"
                 ];
+		binde = [
+		    ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
+		    ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+		];
             };
         };      
     }; 

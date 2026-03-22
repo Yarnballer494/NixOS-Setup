@@ -161,6 +161,7 @@
     vencord
     bitwarden-desktop
     unityhub
+    brightnessctl
   ];
 
   # Auto system upgrade
