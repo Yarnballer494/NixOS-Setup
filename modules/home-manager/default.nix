@@ -15,5 +15,6 @@
     ./sh.nix
     ./vim.nix
     ./nixvim.nix
+    ./waybar.nix
   ];
 }

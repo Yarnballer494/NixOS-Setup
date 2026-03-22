@@ -182,4 +182,9 @@
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
-}
+
+  # Font packages need their own options list, read wiki fonts
+  fonts.packages = with pkgs; [
+    font-awesome_4
+  ];
+} 
