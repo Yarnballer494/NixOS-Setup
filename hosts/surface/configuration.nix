@@ -145,6 +145,8 @@
   services.getty.autologinUser = "yarn";
 
   environment.systemPackages = with pkgs; [
+    age # For nix sops
+    sops # For nix sops
     wget
     git
     kitty
@@ -175,4 +177,9 @@
   services.libinput.enable = true;
 
   programs.waybar.enable = true;
+
+  # Sops imported from flake
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
 }
