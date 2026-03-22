@@ -5,7 +5,9 @@ let
 
     myAliases = {
         ll = "ls -l";
-        ".." = "cd ..";
+	nrs = "sudo nixos-rebuild switch --flake .#surface";
+	hms = "home-manager switch --flake .#yarn@surface";
+	".." = "cd ..";	 
     };
 in
 {
