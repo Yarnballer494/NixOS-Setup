@@ -160,6 +160,7 @@
     godot_4
     vencord
     bitwarden-desktop
+    unityhub
   ];
 
   # Auto system upgrade
@@ -187,4 +188,8 @@
   fonts.packages = with pkgs; [
     font-awesome_4
   ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 } 

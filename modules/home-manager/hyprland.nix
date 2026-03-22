@@ -12,6 +12,9 @@ in
         wayland.windowManager.hyprland = {
             enable = true;
             settings = {
+		xwayland = {
+		    force_zero_scaling = true;
+		};
                 input = {
                     kb_layout = "de";
                     kb_options = "grp:win_space_toggle";
