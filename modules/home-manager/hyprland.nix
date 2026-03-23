@@ -15,7 +15,7 @@ in
 		device = {
 		    # Disabling touchpad because it keeps holding down left click
 		    name = "microsoft-surface-045e:09af-touchpad";
-		    enable = false;
+		    enabled = false;
 		};
 		xwayland = {
 		    force_zero_scaling = true;
