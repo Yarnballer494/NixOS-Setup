@@ -11,8 +11,10 @@ in
   config = lib.mkIf cfg.enable {
     programs.vscode = {
       enable = true;
-      extensions = with pkgs.vscode-extensions; [
-	
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+	visualstudiotoolsforunity.vstuc
+	ms-dotnettools.csharp
+	ms-dotnettools.csdevkit
       ];
     }; 
   };

@@ -160,8 +160,12 @@
     godot_4
     vencord
     bitwarden-desktop
-    unityhub
     brightnessctl
+    # For unity setup
+    # Unity installed with flatpak (non reproducible)
+    dotnet-sdk_9
+    dotnet-runtime_9
+    flatpak
   ];
 
   # Auto system upgrade

@@ -16,7 +16,7 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
-    ../../modules/home-manager/default.nix
+    ../../modules/home/default.nix
   ];
 
   nixpkgs = {
