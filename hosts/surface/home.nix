@@ -71,4 +71,5 @@
   vim.enable = true;
   nixvim.enable = true;
   waybar.enable = false;
+  vscode.enable = true;
 }
