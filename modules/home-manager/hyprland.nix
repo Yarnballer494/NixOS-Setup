@@ -12,6 +12,11 @@ in
         wayland.windowManager.hyprland = {
             enable = true;
             settings = {
+		device = {
+		    # Disabling touchpad because it keeps holding down left click
+		    name = "microsoft-surface-045e:09af-touchpad";
+		    enable = false;
+		};
 		xwayland = {
 		    force_zero_scaling = true;
 		};
