@@ -19,6 +19,9 @@
     # Sops
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Nix jetbrains plugins
+    nix-jetbrains-plugins.url = "github:nix-community/nix-jetbrains-plugins";
   };
 
   outputs = {
@@ -61,7 +64,9 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
       surface = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+	  inherit inputs;
+	};
         modules = [
           # > Our main nixos configuration file <
           ./hosts/surface/configuration.nix  	
@@ -77,7 +82,10 @@
       "yarn@surface" = home-manager.lib.homeManagerConfiguration {
         # Home-manager requires 'pkgs' instance
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = {
+	  inherit inputs;
+	  flake-inputs = inputs;
+	};
         modules = [
           # > Our main home-manager configuration file <
           ./hosts/surface/home.nix

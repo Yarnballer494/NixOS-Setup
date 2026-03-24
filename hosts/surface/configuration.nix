@@ -49,7 +49,8 @@
   };
 
   nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;   
+
   in {
     settings = {
       # Enable flakes and new 'nix' command
@@ -161,13 +162,16 @@
     vencord
     bitwarden-desktop
     brightnessctl
-    # For unity setup
-    # Unity installed with flatpak (non reproducible)
-    dotnet-sdk_9
-    dotnet-runtime_9
-    flatpak
+    unityhub
+    (pkgs.unityhub.override {
+      extraPkgs = fhsPkgs: [
+        # Extra unity libraries/packages here
+      ];
+    })
   ];
 
+  
+  
   # Auto system upgrade
   system.autoUpgrade = {
     enable = true;
@@ -196,5 +200,5 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-  };
+  };  
 } 
