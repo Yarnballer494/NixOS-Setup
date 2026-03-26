@@ -159,7 +159,6 @@
       accent = "mauve";
     })
     godot_4
-    vencord
     bitwarden-desktop
     brightnessctl
     unityhub
@@ -167,6 +166,9 @@
       extraPkgs = fhsPkgs: [
         # Extra unity libraries/packages here
       ];
+    })
+    (discord.override {
+      withVencord = true;
     })
   ];
 
