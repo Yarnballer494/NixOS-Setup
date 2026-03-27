@@ -22,6 +22,10 @@
 
     # Nix jetbrains plugins
     nix-jetbrains-plugins.url = "github:nix-community/nix-jetbrains-plugins";
+
+    # Stylix
+    stylix.url = "github:nix-community/stylix/release-25.11";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -29,6 +33,7 @@
     nixpkgs,
     home-manager,
     sops-nix,
+    stylix,
     ...
   } @ inputs: let
     # Supported systems for your flake packages, shell, etc.
@@ -89,6 +94,7 @@
         modules = [
           # > Our main home-manager configuration file <
           ./hosts/surface/home.nix
+	  stylix.homeModules.stylix
         ];
       };
     };

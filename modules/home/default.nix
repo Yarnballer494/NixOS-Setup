@@ -16,5 +16,6 @@
     ./vim.nix
     ./nixvim.nix
     ./waybar.nix
+    ./stylix-home.nix
   ];
 }
