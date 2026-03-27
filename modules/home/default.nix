@@ -16,6 +16,5 @@
     ./vim.nix
     ./nixvim.nix
     ./waybar.nix
-    ./vscode.nix
   ];
 }

@@ -103,7 +103,6 @@ in
   vim.enable = true;
   nixvim.enable = true;
   waybar.enable = false;
-  vscode.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [
