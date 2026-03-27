@@ -104,6 +104,7 @@ in
   nixvim.enable = true;
   waybar.enable = false;
   stylix-home.enable = true;
+  kitty.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [

@@ -152,7 +152,6 @@
     git
     kitty
     waybar
-    hyprpaper
     rofi
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
