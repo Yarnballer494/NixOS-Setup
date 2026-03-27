@@ -25,6 +25,18 @@ in
                     kb_layout = "de";
                     kb_options = "grp:win_space_toggle";
                 };
+		decoration = {
+		    rounding = "10";
+		    active_opacity = "0.8";
+		    inactive_opacity = "0.8";
+		    blur = {
+			enabled = true;
+			size = "8";
+			passes = "2";
+			new_optimizations = true;
+			ignore_opacity = false;
+		    };
+		};
                 bind = [
                     # Main binds
                     "SUPER, Q, exec, kitty"
