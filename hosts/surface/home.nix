@@ -105,6 +105,7 @@ in
   waybar.enable = false;
   stylix-home.enable = true;
   kitty.enable = true;
+  firefox.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [

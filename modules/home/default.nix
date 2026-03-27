@@ -18,5 +18,6 @@
     ./waybar.nix
     ./stylix-home.nix
     ./kitty.nix
+    ./firefox.nix
   ];
 }

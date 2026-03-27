@@ -14,6 +14,15 @@ in
       image = ../../wallpapers/snowflakes.jpg;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
       polarity = "dark";
+      
+      targets = {
+	firefox = {
+	  profileNames = [
+	    "default"
+	    "yarn"
+	  ];
+	};
+      };
     }; 
   };
 }

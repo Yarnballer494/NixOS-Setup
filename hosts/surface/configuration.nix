@@ -129,8 +129,6 @@
     xwayland.enable = true;
   };
 
-  programs.firefox.enable = true;
-
   services.displayManager.sddm = {
     enable = true;
     theme = "catppuccin-mocha-mauve";
@@ -151,6 +149,7 @@
     wget
     git
     kitty
+
     waybar
     rofi
     (pkgs.catppuccin-sddm.override {
