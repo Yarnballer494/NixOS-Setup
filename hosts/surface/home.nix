@@ -106,6 +106,7 @@ in
   stylix-home.enable = true;
   kitty.enable = true;
   firefox.enable = true;
+  rofi.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [

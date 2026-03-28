@@ -142,7 +142,6 @@
     git
     kitty
 
-    rofi
     godot_4
     bitwarden-desktop
     brightnessctl

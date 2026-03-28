@@ -14,5 +14,6 @@
     ./stylix-home.nix
     ./kitty.nix
     ./firefox.nix
+    ./rofi.nix
   ];
 }
