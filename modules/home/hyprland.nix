@@ -13,18 +13,27 @@ in
             enable = true;
             settings = {
 		monitor = ",preferred,auto,1.6";
+
 		device = {
 		    # Disabling touchpad because it keeps holding down left click
 		    name = "microsoft-surface-045e:09af-touchpad";
 		    enabled = false;
 		};
+
 		xwayland = {
 		    force_zero_scaling = true;
 		};
+
                 input = {
                     kb_layout = "de";
                     kb_options = "grp:win_space_toggle";
                 };
+
+		layerrule = [
+		  "blur, rofi"
+		  "blur, waybar"
+		];
+
 		decoration = {
 		    rounding = "10";
 		    active_opacity = "0.8";
@@ -37,10 +46,11 @@ in
 			ignore_opacity = false;
 		    };
 		};
+		
                 bind = [
                     # Main binds
                     "SUPER, Q, exec, kitty"
-                    "SUPER, W, exec, rofi -show run"
+                    "SUPER, W, exec, rofi -show drun"
                     "SUPER, E, exec, firefox"
                     "SUPER, C, killactive,"
                     "SUPER, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"             
@@ -71,6 +81,7 @@ in
                     "SUPER, up, movefocus, u"
                     "SUPER, down, movefocus, d"
                 ];
+
 		binde = [
 		    ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
 		    ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"

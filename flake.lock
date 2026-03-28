@@ -205,11 +205,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1774078133,
-        "narHash": "sha256-8Z4VI0CzoQ528LjSpy7t8YRMVUU+50L+wzYxpRXHXBI=",
+        "lastModified": 1774691828,
+        "narHash": "sha256-5JCdhEVaATMZvpFRx4/s+E39YFqrO46+fB8C/xjP6po=",
         "owner": "nix-community",
         "repo": "nix-jetbrains-plugins",
-        "rev": "df85a8aace815dec8d78683f9717b2958a8f1364",
+        "rev": "8f09f42ba523085dd22896acfc31e327e4b14fbb",
         "type": "github"
       },
       "original": {
