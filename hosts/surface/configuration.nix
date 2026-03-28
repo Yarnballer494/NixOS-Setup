@@ -150,7 +150,6 @@
     git
     kitty
 
-    waybar
     rofi
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";

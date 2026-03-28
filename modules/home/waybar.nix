@@ -18,7 +18,9 @@ in
 	output = [
 	  "eDP-1"
 	];
-	modules-left = [ "Network" "Battery" "Clock" ];
+	modules-left = [ "hyprland/workspaces" ];
+	modules-center = [ "hyprland/window" ];
+	modules-right = [ "network" "memory" "battery" "clock" "tray" ];
       };
     }; 
   };

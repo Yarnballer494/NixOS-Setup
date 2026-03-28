@@ -102,7 +102,7 @@ in
   sh.enable = true;
   vim.enable = true;
   nixvim.enable = true;
-  waybar.enable = false;
+  waybar.enable = true;
   stylix-home.enable = true;
   kitty.enable = true;
   firefox.enable = true;
