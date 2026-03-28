@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 
 let 
-  cfg = config.stylix-home;
+  cfg = config.stylix-system;
 in
 {
   options = {
-    stylix-home.enable = lib.mkEnableOption "Enable stylix for home";
+    stylix-system.enable = lib.mkEnableOption "Enable stylix for system";
   };  
 
   config = lib.mkIf cfg.enable {
@@ -14,15 +14,6 @@ in
       image = ../../wallpapers/snowflakes.jpg;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
       polarity = "dark";
-      
-      targets = {
-	firefox = {
-	  profileNames = [
-	    "default"
-	    "yarn"
-	  ];
-	};
-      };
     }; 
   };
 }

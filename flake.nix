@@ -59,7 +59,7 @@
     overlays = import ./overlays {inherit inputs;};
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
-    nixosModules = import ./modules/nixos;
+    nixosModules = import ./modules/system;
     # Reusable home-manager modules you might want to export
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home;
@@ -75,6 +75,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./hosts/surface/configuration.nix  	
+	  stylix.nixosModules.stylix
 	  sops-nix.nixosModules.sops
         ];
       };

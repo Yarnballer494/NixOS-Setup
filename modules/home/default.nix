@@ -4,12 +4,7 @@
   # List your module files here
   # my-module = import ./my-module.nix;
     
-  # git = import ./git.nix;
-  # hyprland = import ./hyprland.nix;
-  # sh = import ./sh.nix;
-  # vim = import ./vim.nix;
-
-  imports = [
+    imports = [
     ./git.nix
     ./hyprland.nix
     ./sh.nix

@@ -17,7 +17,7 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
+    ../../modules/system/default.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -129,14 +129,6 @@
     xwayland.enable = true;
   };
 
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "catppuccin-mocha-mauve";
-    wayland = {
-      enable = true;
-    };
-  };
-
   services.xserver = {
     xkb.layout = "de";
   };
@@ -151,10 +143,6 @@
     kitty
 
     rofi
-    (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      accent = "mauve";
-    })
     godot_4
     bitwarden-desktop
     brightnessctl
@@ -168,8 +156,6 @@
       withVencord = true;
     })
   ];
-
-  
   
   # Auto system upgrade
   system.autoUpgrade = {
@@ -185,8 +171,6 @@
   # Enable touchpad support
   services.libinput.enable = true;
 
-  programs.waybar.enable = true;
-
   # Sops imported from flake
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
@@ -200,4 +184,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };  
+
+  sddm.enable = true;
+  stylix-system.enable = true;
 } 
