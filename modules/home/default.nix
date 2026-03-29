@@ -16,5 +16,6 @@
     ./firefox.nix
     ./rofi.nix
     ./blender.nix
+    ./obsidian.nix
   ];
 }

@@ -108,6 +108,7 @@ in
   firefox.enable = true;
   rofi.enable = true;
   blender.enable = true;
+  obsidian.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [
