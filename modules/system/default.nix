@@ -7,5 +7,6 @@
   imports = [
     ./sddm.nix
     ./stylix-system.nix
+    ./networkmanager.nix
   ];
 }

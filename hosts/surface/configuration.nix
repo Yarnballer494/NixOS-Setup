@@ -118,8 +118,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.networkmanager.enable = true;
-
   time.timeZone = "Europe/Berlin";
 
   programs.ssh.startAgent = true;
@@ -173,7 +171,7 @@
   # Sops imported from flake
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
+  sops.age.keyFile = "/home/yarn/.config/sops/age/keys.txt";
 
   # Font packages need their own options list, read wiki fonts
   fonts.packages = with pkgs; [
@@ -186,4 +184,5 @@
 
   sddm.enable = true;
   stylix-system.enable = true;
+  networkmanager.enable = true;
 } 
