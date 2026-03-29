@@ -15,5 +15,6 @@
     ./kitty.nix
     ./firefox.nix
     ./rofi.nix
+    ./blender.nix
   ];
 }
