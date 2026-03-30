@@ -140,12 +140,6 @@
     git
     kitty
 
-    unityhub
-    (pkgs.unityhub.override {
-      extraPkgs = fhsPkgs: [
-        # Extra unity libraries/packages here
-      ];
-    })
     (discord.override {
       withVencord = true;
     })

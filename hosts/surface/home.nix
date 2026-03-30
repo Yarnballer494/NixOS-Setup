@@ -112,6 +112,7 @@ in
   godot.enable = true;
   bitwarden.enable = true;
   brightnessctl.enable = true;
+  unityhub.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [
