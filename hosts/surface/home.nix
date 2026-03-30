@@ -16,6 +16,7 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
+    inputs.sops-nix.homeManagerModules.sops
 
     # You can also split up your configuration and import pieces of it here:
     ../../modules/home/default.nix
@@ -85,4 +86,9 @@
   unityhub.enable = true;
   rider.enable = true;
   nixcord.enable = true;
+
+  # Sops imported from flake
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/yarn/.config/sops/age/keys.txt";
 }

@@ -10,16 +10,16 @@ in
 
   config = lib.mkIf cfg.enable {
     sops.secrets."wifi/olja/ssid" = {};
-    sops.secrets."wifi/olja/psk" = {};
+    sops.secrets."wifi/olja/psk" = {};  
 
     networking.networkmanager = {
       enable = true;
-
       ensureProfiles = {
-	environmentFiles = [
-	  config.sops.secrets."wifi/olja/ssid".path
+
+        environmentFiles = [
+          config.sops.secrets."wifi/olja/ssid".path
 	  config.sops.secrets."wifi/olja/psk".path
-	];
+        ];
 
 	profiles = {
 	  "olja" = {
