@@ -139,10 +139,6 @@
     wget
     git
     kitty
-
-    (discord.override {
-      withVencord = true;
-    })
   ];
   
   # Auto system upgrade

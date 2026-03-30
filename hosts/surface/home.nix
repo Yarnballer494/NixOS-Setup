@@ -84,4 +84,5 @@
   brightnessctl.enable = true;
   unityhub.enable = true;
   rider.enable = true;
+  nixcord.enable = true;
 }
