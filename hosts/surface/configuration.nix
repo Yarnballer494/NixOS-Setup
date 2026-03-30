@@ -140,7 +140,6 @@
     git
     kitty
 
-    brightnessctl
     unityhub
     (pkgs.unityhub.override {
       extraPkgs = fhsPkgs: [

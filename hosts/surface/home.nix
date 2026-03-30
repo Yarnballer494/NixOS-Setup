@@ -111,6 +111,7 @@ in
   obsidian.enable = true;
   godot.enable = true;
   bitwarden.enable = true;
+  brightnessctl.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [
