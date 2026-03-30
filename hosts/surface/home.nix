@@ -109,6 +109,8 @@ in
   rofi.enable = true;
   blender.enable = true;
   obsidian.enable = true;
+  godot.enable = true;
+  bitwarden.enable = true;
 
   # Turn this into its own module
   home.packages = with pkgs; [

@@ -140,8 +140,6 @@
     git
     kitty
 
-    godot_4
-    bitwarden-desktop
     brightnessctl
     unityhub
     (pkgs.unityhub.override {
