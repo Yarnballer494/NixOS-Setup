@@ -1,21 +1,12 @@
 # Add your reusable home-manager modules to this directory, on their own file (https://nixos.wiki/wiki/Module).
 # These should be stuff you would like to share with others, not your personal configurations.
-{
-  # List your module files here
-  # my-module = import ./my-module.nix;
-    
-    imports = [
-    ./git.nix
-    ./hyprland.nix
-    ./sh.nix
-    ./vim.nix
-    ./nixvim.nix
-    ./waybar.nix
-    ./stylix-home.nix
-    ./kitty.nix
-    ./firefox.nix
-    ./rofi.nix
-    ./blender.nix
-    ./obsidian.nix
-  ];
+
+{ lib, ... }: {
+  # Import all nix files in this dir
+  # Except default.nix, because of infinite recursion
+  imports = lib.fileset.toList (
+    lib.fileset.fileFilter (
+      file: file.hasExt "nix" && file.name != "default.nix"
+    ) ./.
+  );
 }
