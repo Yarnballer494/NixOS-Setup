@@ -11,6 +11,8 @@ in
   config = lib.mkIf cfg.enable {
     sops.secrets."wifi/olja/ssid" = {};
     sops.secrets."wifi/olja/psk" = {};  
+    sops.secrets."wifi/stud/ssid" = {};
+    sops.secrets."wifi/stud/psk" = {};
 
     networking.networkmanager = {
       enable = true;
@@ -19,6 +21,8 @@ in
         environmentFiles = [
           config.sops.secrets."wifi/olja/ssid".path
 	  config.sops.secrets."wifi/olja/psk".path
+	  config.sops.secrets."wifi/stud/ssid".path
+	  config.sops.secrets."wifi/stud/psk".path
         ];
 
 	profiles = {
@@ -35,6 +39,28 @@ in
 	    wifi-security = {
 	      key-mgmt = "wpa-psk";
 	      psk = "$OLJA_PSK";
+	    };
+	    ipv4 = {
+	      method = "auto";
+	    };
+	    ipv6 = {
+	      method = "auto";
+	      addr-gen-mode = "stable-privacy";
+	    };
+	  };
+	  "stud" = {
+	    connection = {
+	      id = "stud";
+	      type = "wifi";
+	      autoconnect = true;
+	    };
+	    wifi = {
+	      mode = "infrastructure";
+	      ssid = "$STUD_SSID";
+	    };
+	    wifi-security = {
+	      key-mgmt = "wpa-psk";
+	      psk = "$STUD_PSK";
 	    };
 	    ipv4 = {
 	      method = "auto";
