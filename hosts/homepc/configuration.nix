@@ -18,6 +18,9 @@
 
     # You can also split up your configuration and import pieces of it here:
     ../../modules/system/default.nix
+    
+    # Per-host configuration for different programs
+    ./homepc-system.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -79,7 +82,7 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "surface";
+  networking.hostName = "homepc";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -94,7 +97,7 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "yarn"];
     };
   };
 
@@ -146,6 +149,8 @@
     wget
     git
     kitty
+
+    v4l-utils
   ];
   
   # Auto system upgrade
@@ -176,6 +181,8 @@
     NIXOS_OZONE_WL = "1";
   };  
 
+  #Config added for this machine 
+
   sddm.enable = true;
   stylix-system.enable = true;
   networkmanager.enable = true;
@@ -183,5 +190,19 @@
   hardware.graphics = {
     package = pkgs.unstable.mesa;
     package32 = pkgs.unstable.pkgsi686Linux.mesa;
+  };
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 } 

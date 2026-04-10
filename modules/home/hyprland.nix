@@ -11,11 +11,10 @@ in
     config = lib.mkIf cfg.enable {
         wayland.windowManager.hyprland = {
             enable = true;
+	    xwayland.enable = true;
             settings = {
-		monitor = ",preferred,auto,1.6";
-
 		device = {
-		    # Disabling touchpad because it keeps holding down left click
+		# Disabling touchpad because it keeps holding down left click
 		    name = "microsoft-surface-045e:09af-touchpad";
 		    enabled = false;
 		};

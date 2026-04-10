@@ -70,7 +70,7 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # FIXME replace with your hostname
+      # FIXME add all hosts you need 
       surface = nixpkgs.lib.nixosSystem {
         specialArgs = {
 	  inherit inputs;
@@ -82,12 +82,23 @@
 	  sops-nix.nixosModules.sops
         ];
       };
+      homepc = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+	  inherit inputs;
+	};
+        modules = [
+          # > Our main nixos configuration file <
+          ./hosts/homepc/configuration.nix  	
+	  stylix.nixosModules.stylix
+	  sops-nix.nixosModules.sops
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      # FIXME replace with your username@hostname
+      # FIXME add all users@hosts you need 
       "yarn@surface" = home-manager.lib.homeManagerConfiguration {
         # Home-manager requires 'pkgs' instance
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -99,8 +110,23 @@
           # > Our main home-manager configuration file <
           ./hosts/surface/home.nix
 	  stylix.homeModules.stylix
+      	  sops-nix.homeManagerModules.sops
         ];
       };
+      "yarn@homepc" = home-manager.lib.homeManagerConfiguration {
+        # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+	  inherit inputs;
+	  flake-inputs = inputs;
+	};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./hosts/homepc/home.nix
+	  stylix.homeModules.stylix
+      	  sops-nix.homeManagerModules.sops
+        ];
+      };    
     };
   };
 }
