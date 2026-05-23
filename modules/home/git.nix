@@ -1,11 +1,19 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 
 let
   cfg = config.git;
 in
 {
-  options = {
+  options = with lib; {
     git.enable = lib.mkEnableOption "Enable git";
+    git.name = mkOption {
+      type = types.str;
+      description = "Git username of the home manager user";
+    };
+    git.email = mkOption {
+      type = types.str;
+      description = "Git email of the home manager user";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -14,11 +22,11 @@ in
       lfs.enable = true;
       settings = {
         user = { 
-	  name = "yarn";
-          email = "152090555+Yarnballer494@users.noreply.github.com";
+	  name = "${config.git.name}";
+          email = "${config.git.email}";
         };
       init.defaultBranch = "main";
-      safe.directory = "/etc/nixos";
+      safe.directory = "/home/${username}/nixos";
       };
     };
   }; 

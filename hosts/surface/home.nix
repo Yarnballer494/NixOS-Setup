@@ -8,6 +8,11 @@
   ...
 }: 
 
+let
+  # FIXME: Set your username
+  username = "yarn";
+
+in
 {
   # You can import other home-manager modules here
   imports = [
@@ -32,13 +37,6 @@
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
     # Configure your nixpkgs instance
     config = {
@@ -47,10 +45,9 @@
     };
   };
 
-  # TODO: Set your username
   home = {
-    username = "yarn";
-    homeDirectory = "/home/yarn";
+    username = "${username}";
+    homeDirectory = "/home/${username}";
   };
 
   # Add stuff for your user as you see fit:
@@ -67,6 +64,11 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.11";
   
+  # Sops imported from flake
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
+    
   # Toggle imported modules
   git.enable = true;
   hyprland.enable = true;
@@ -86,9 +88,9 @@
   unityhub.enable = true;
   rider.enable = true;
   nixcord.enable = true;
+  yazi.enable = true;
 
-  # Sops imported from flake
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/yarn/.config/sops/age/keys.txt";
+  # Set mandatory imported options
+  git.name = "${username}";
+  git.email = "152090555+Yarnballer494@users.noreply.github.com";
 }
