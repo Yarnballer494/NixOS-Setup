@@ -65,8 +65,8 @@ fi
 REAL_USER="${SUDO_USER:-$USER}"
 REAL_HOME=$(getent passwd "$REAL_USER" | cut -d: -f6)
 
-# Strip leading dot of hidden filenames before injection
-INJECTED_NAME="${FILENAME#.}"
+# Strip leading dot of hidden filenames and .nix ext before injection
+INJECTED_NAME=$(basename "${FILENAME#.}" .nix)
 
 # Layout template using the filename parameter
 cat << EOF >> "$TARGET_FILE"
