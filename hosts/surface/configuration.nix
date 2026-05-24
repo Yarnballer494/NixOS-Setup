@@ -137,6 +137,9 @@
       wget
       git
       kitty
+
+      # Custom pkgs, might move into own modules
+      newmodule
     ];
     
     # Auto system upgrade
