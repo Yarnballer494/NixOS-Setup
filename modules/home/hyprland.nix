@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostname, ... }:
 
 let
     cfg = config.hyprland;
@@ -12,12 +12,19 @@ in
         wayland.windowManager.hyprland = {
             enable = true;
             settings = {
-		monitor = ",preferred,auto,1.6";
+		# Add monitor settings for different hosts
+		monitor = if "${hostname}" == "surface" 
+		    then ",preferred,auto,1.6"
+		    else ",preferred,auto,1.6"; # Change to else-if when adding more hosts 
 
-		device = {
+		device = if "${hostname}" == "surface" 
+		then {
 		    # Disabling touchpad because it keeps holding down left click
 		    name = "microsoft-surface-045e:09af-touchpad";
 		    enabled = false;
+		}
+		else {
+		    # Change to else-if when adding more hosts
 		};
 
 		xwayland = {
