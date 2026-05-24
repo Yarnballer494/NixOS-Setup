@@ -89,6 +89,7 @@ in
   rider.enable = true;
   nixcord.enable = true;
   yazi.enable = true;
+  btop.enable = true;
 
   # Set mandatory imported options
   git.name = "${username}";
