@@ -90,6 +90,7 @@ in
   nixcord.enable = true;
   yazi.enable = true;
   btop.enable = true;
+  zathura.enable = true;
 
   # Set mandatory imported options
   git.name = "${username}";
