@@ -91,6 +91,7 @@ in
   yazi.enable = true;
   btop.enable = true;
   zathura.enable = true;
+  direnv.enable = true;
 
   # Set mandatory imported options
   git.name = "${username}";
