@@ -14,27 +14,48 @@ in
     programs.nixvim = {
       enable = true;
       defaultEditor = true;
-      plugins.lualine.enable = true;
+      viAlias = true;
+      vimAlias = true;
+
       opts = {
         number = true;
-	relativenumber = true;
-	shiftwidth = 4;
+	      relativenumber = true;
+	      shiftwidth = 2;
+	      tabstop = 2;
+	      expandtab = true;
       };
-      keymaps = [
-      # Trivial remaps but shows the syntax :)
-	{
-	  mode = ["n" "v"];
-	  key = "<leader>y"; 
-	  options.silent = true;
-	  action = "\"+y";
-	}
-	{
-	  mode = ["n" "v"];
-	  key = "<leader>p";
-	  options.silent = true;
-	  action = "\"+p";
-	}
-      ];
+
+      plugins = {
+	      telescope.enable = true;
+	      web-devicons.enable = true;
+        neo-tree.enable = true;
+	      treesitter.enable = true;
+        luasnip.enable = true;
+        friendly-snippets.enable = true;
+        comment.enable = true;
+
+	      lsp = {
+	        enable = true;
+	        servers = {
+	          nil_ls.enable = true;
+	          ts_ls.enable = true;
+	        };
+	      };
+
+        cmp = {
+          enable = true;
+          settings.sources = [
+            { name = "nvim_lsp"; }
+            { name = "luasnip"; }
+            { name = "buffer"; keywordLength = 3; }
+            { name = "path"; keywordLength = 1; }
+          ];
+        };
+      };
+
+      extraConfigLua = ''
+	      vim.opt.exrc = true;
+      '';
     };   
   };
 }
