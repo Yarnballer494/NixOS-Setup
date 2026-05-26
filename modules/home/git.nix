@@ -22,11 +22,11 @@ in
       lfs.enable = true;
       settings = {
         user = { 
-	  name = "${config.git.name}";
+      	  name = "${config.git.name}";
           email = "${config.git.email}";
         };
-      init.defaultBranch = "main";
-      safe.directory = "/home/${username}/nixos";
+        init.defaultBranch = "main";
+        safe.directory = "/home/${username}/nixos";
       };
     };
   }; 

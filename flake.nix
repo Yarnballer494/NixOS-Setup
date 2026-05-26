@@ -73,15 +73,15 @@
       # FIXME replace with your hostname
       surface = nixpkgs.lib.nixosSystem {
         specialArgs = {
-	  inherit inputs;
-	  # FIXME add hostname again for access by other modules
-	  hostname = "surface";
-	};
+	        inherit inputs;
+	        # FIXME add hostname again for access by other modules
+	        hostname = "surface";
+	      };
         modules = [
           # > Our main nixos configuration file <
           ./hosts/surface/configuration.nix  	
-	  stylix.nixosModules.stylix
-	  sops-nix.nixosModules.sops
+	        stylix.nixosModules.stylix
+	        sops-nix.nixosModules.sops
         ];
       };
     };
@@ -94,16 +94,16 @@
         # Home-manager requires 'pkgs' instance
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {
-	  inherit inputs;
-	  flake-inputs = inputs;
-	  # FIXME add username and hostname again for access by other modules
-	  username = "yarn";
-	  hostname = "surface";
-	};
+	        inherit inputs;
+	        flake-inputs = inputs;
+	        # FIXME add username and hostname again for access by other modules
+	        username = "yarn";
+	        hostname = "surface";
+	      };
         modules = [
           # > Our main home-manager configuration file <
           ./hosts/surface/home.nix
-	  stylix.homeModules.stylix
+	        stylix.homeModules.stylix
         ];
       };
     };

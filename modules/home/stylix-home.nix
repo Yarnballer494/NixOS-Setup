@@ -21,15 +21,15 @@ in
       # opacity.terminal = 1.0;
       
       targets = {
-	firefox = {
-	  profileNames = [
-	    "default"
-	    "yarn"
-	  ];
-	};
-	# Can't make these transparent if stylix is overwriting values
-	rofi.enable = false;
-	waybar.enable = false;
+	      firefox = {
+	        profileNames = [
+	          "default"
+	          "yarn"
+	        ];
+	      };
+	      # Can't make these transparent if stylix is overwriting values
+	      rofi.enable = false;
+	      waybar.enable = false;
       };
     }; 
   };

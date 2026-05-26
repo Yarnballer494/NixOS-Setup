@@ -17,9 +17,9 @@ in
       enableFishIntegration = true;
 
       settings = {
-	manager = {
-	  sort_by = "natural";
-	};
+	      manager = {
+	        sort_by = "natural";
+	      };
       };
     };
   };

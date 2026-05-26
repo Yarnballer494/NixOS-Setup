@@ -12,7 +12,7 @@ in
     programs.kitty = {
       enable = true;
       settings = {
-	# add settings here
+	      # add settings here
       };
     };
   };

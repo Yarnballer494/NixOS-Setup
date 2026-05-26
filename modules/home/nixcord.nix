@@ -18,15 +18,15 @@ in
       # Theming
       quickCss = "/* css goes here */";
       config = {
-	useQuickCss = true;
-	themeLinks = [
-	  # Link themes here
-	];
-	frameless = true;
-
-	plugins = {
-	  # Enable and configure plugins here
-	};
+    	  useQuickCss = true;
+	      themeLinks = [
+	        # Link themes here
+	      ];
+	      frameless = true;
+  
+	      plugins = {
+	        # Enable and configure plugins here
+	      };
       };
     };
   };

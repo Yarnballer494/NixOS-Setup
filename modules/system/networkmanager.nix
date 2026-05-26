@@ -20,57 +20,57 @@ in
 
         environmentFiles = [
           config.sops.secrets."wifi/olja/ssid".path
-	  config.sops.secrets."wifi/olja/psk".path
-	  config.sops.secrets."wifi/stud/ssid".path
-	  config.sops.secrets."wifi/stud/psk".path
+      	  config.sops.secrets."wifi/olja/psk".path
+	        config.sops.secrets."wifi/stud/ssid".path
+	        config.sops.secrets."wifi/stud/psk".path
         ];
 
-	profiles = {
-	  "olja" = {
-	    connection = {
-	      id = "olja";
-	      type = "wifi";
-	      autoconnect = true;
-	    };
-	    wifi = {
-	      mode = "infrastructure";
-	      ssid = "$OLJA_SSID";
-	    };
-	    wifi-security = {
-	      key-mgmt = "wpa-psk";
-	      psk = "$OLJA_PSK";
-	    };
-	    ipv4 = {
-	      method = "auto";
-	    };
-	    ipv6 = {
-	      method = "auto";
-	      addr-gen-mode = "stable-privacy";
-	    };
-	  };
-	  "stud" = {
-	    connection = {
-	      id = "stud";
-	      type = "wifi";
-	      autoconnect = true;
-	    };
-	    wifi = {
-	      mode = "infrastructure";
-	      ssid = "$STUD_SSID";
-	    };
-	    wifi-security = {
-	      key-mgmt = "wpa-psk";
-	      psk = "$STUD_PSK";
-	    };
-	    ipv4 = {
-	      method = "auto";
-	    };
-	    ipv6 = {
-	      method = "auto";
-	      addr-gen-mode = "stable-privacy";
-	    };
-	  };
-	};
+	      profiles = {
+	        "olja" = {
+	          connection = {
+	            id = "olja";
+	            type = "wifi";
+	            autoconnect = true;
+	          };
+	          wifi = {
+	            mode = "infrastructure";
+	            ssid = "$OLJA_SSID";
+	          };
+	          wifi-security = {
+	            key-mgmt = "wpa-psk";
+	            psk = "$OLJA_PSK";
+	          };
+	          ipv4 = {
+	            method = "auto";
+	          };
+	          ipv6 = {
+	            method = "auto";
+	            addr-gen-mode = "stable-privacy";
+	          };
+	        };
+	        "stud" = {
+	          connection = {
+	            id = "stud";
+	            type = "wifi";
+	            autoconnect = true;
+	          };
+	          wifi = {
+	            mode = "infrastructure";
+	            ssid = "$STUD_SSID";
+	          };
+	          wifi-security = {
+	            key-mgmt = "wpa-psk";
+	            psk = "$STUD_PSK";
+	          };
+	          ipv4 = {
+	            method = "auto";
+	          };
+	          ipv6 = {
+	            method = "auto";
+	            addr-gen-mode = "stable-privacy";
+	          };
+	        };
+	      };
       };
     };
   };

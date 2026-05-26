@@ -14,30 +14,30 @@ in
       languagePacks = [ "en-US" ];
       
       policies = {
-	DisablePocket = true;
-	HardwareAcceleration = true;
+	      DisablePocket = true;
+	      HardwareAcceleration = true;
       };
 
       profiles = {
-	default = {
-	  id = 0;
-	  name = "default";
-	  isDefault = true;
-	  search = {
-	    default = "google";
-	    force = true;
-	  };
-	};
+	      default = {
+	        id = 0;
+	        name = "default";
+	        isDefault = true;
+	        search = {
+	          default = "google";
+	          force = true;
+	        };
+	      };
 
-	yarn = {
-	  id = 1;
-	  name = "yarn";
-	  isDefault = false;
-	  search = {
-	    default = "ddg";
-	    force = true;
-	  };
-	};
+	      yarn = {
+	        id = 1;
+	        name = "yarn";
+	        isDefault = false;
+	        search = {
+	          default = "ddg";
+	          force = true;
+	        };
+	      };
       };
     };
   };

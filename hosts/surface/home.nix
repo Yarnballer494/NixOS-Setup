@@ -73,7 +73,7 @@ in
   git.enable = true;
   hyprland.enable = true;
   sh.enable = true;
-  vim.enable = true;
+  vim.enable = false;
   nixvim.enable = true;
   waybar.enable = true;
   stylix-home.enable = true;

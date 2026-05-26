@@ -14,14 +14,14 @@ in
       systemd.enable = true;
       settings.mainBar = {
         layer = "top";
-	position = "top";
-	height = 30;
-	output = [
-	  "eDP-1"
-	];
-	modules-left = [ "hyprland/workspaces" ];
-	modules-center = [ "hyprland/window" ];
-	modules-right = [ "network" "memory" "battery" "clock" "tray" ];
+      	position = "top";
+	      height = 30;
+	      output = [
+	        "eDP-1"
+	      ];
+	      modules-left = [ "hyprland/workspaces" ];
+	      modules-center = [ "hyprland/window" ];
+	      modules-right = [ "network" "memory" "battery" "clock" "tray" ];
       };
     }; 
   };
