@@ -56,11 +56,11 @@ in
 		
         bind = [
           # Main binds
-          "SUPER, Q, exec, kitty"
+          "SUPER, Return, exec, kitty"
+          "SUPER, Q, killactive,"
           "SUPER, W, exec, rofi -show drun"
-          "SUPER, E, exec, firefox"
-          "SUPER, C, killactive,"
           "SUPER, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"             
+          "SUPER, L, exec, hyprlock"
 
           # Workspaces
           "SUPER, 1, focusworkspaceoncurrentmonitor, 1"

@@ -92,6 +92,7 @@ in
   btop.enable = true;
   zathura.enable = true;
   direnv.enable = true;
+  hyprlock.enable = true;
 
   # Set mandatory imported options
   git.name = "${username}";
