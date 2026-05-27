@@ -41,7 +41,6 @@ in
       ])
       # Needed for unity development
       dotnet-sdk_9
-      dotnet-runtime_9
     ];
 
     # Create dummy desktop file to allow unity to find rider
