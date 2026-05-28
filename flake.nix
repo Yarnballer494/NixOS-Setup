@@ -29,6 +29,9 @@
     
     # Nixcord
     nixcord.url = "github:FlameFlag/nixcord";
+
+    # Surface kernel
+    nixos-hardware.url = "github:Nixos/nixos-hardware/master";
   };
 
   outputs = {
@@ -37,6 +40,7 @@
     home-manager,
     sops-nix,
     stylix,
+    nixos-hardware,
     ...
   } @ inputs: let
     # Supported systems for your flake packages, shell, etc.
@@ -82,6 +86,7 @@
           ./hosts/surface/configuration.nix  	
 	        stylix.nixosModules.stylix
 	        sops-nix.nixosModules.sops
+          nixos-hardware.nixosModules.microsoft-surface-common
         ];
       };
     };

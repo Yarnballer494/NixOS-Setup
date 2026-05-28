@@ -258,16 +258,32 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1779498537,
-        "narHash": "sha256-6LQjFDS69JufrN4sVsMNsXxeSF6BbDzMSbN7sVApsaA=",
+        "lastModified": 1779844462,
+        "narHash": "sha256-zM/kljRBq/o4gg0QhFglJBrP9POH5lFA9+msA2QFsuc=",
         "owner": "FlameFlag",
         "repo": "nixcord",
-        "rev": "45a98c17b0d9e695bdee92ab00c76657eddf47e7",
+        "rev": "b01cb33ce9f7f85021b4863fbda30858343a3d2d",
         "type": "github"
       },
       "original": {
         "owner": "FlameFlag",
         "repo": "nixcord",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1779826373,
+        "narHash": "sha256-3sRzgLX86qV5NlhWUAufLmHwkyP03tmL3VdZIM13dEo=",
+        "owner": "Nixos",
+        "repo": "nixos-hardware",
+        "rev": "ef4efb84766a166c906bd55759574676bf91267c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Nixos",
+        "ref": "master",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -389,11 +405,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1779683452,
-        "narHash": "sha256-Ksx8jghpDBCPDiTaTyGhYUXG1BUwqPjf5pajl0q0cqA=",
+        "lastModified": 1779816597,
+        "narHash": "sha256-Kgod3gZlhSp6WozZ2pFaclXbWpjs6kQLAtldoxb85Lc=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "afec1bae0e6f7983a5c03ec559f7ed2ec0e714a9",
+        "rev": "297f9341476ba7f821a42d7a2805e206ef8c6ef8",
         "type": "github"
       },
       "original": {
@@ -432,6 +448,7 @@
         "home-manager": "home-manager",
         "nix-jetbrains-plugins": "nix-jetbrains-plugins",
         "nixcord": "nixcord",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
