@@ -93,6 +93,7 @@ in
   zathura.enable = true;
   direnv.enable = true;
   hyprlock.enable = true;
+  hypridle.enable = true;
 
   # Set mandatory imported options
   git.name = "${username}";

@@ -182,5 +182,11 @@
     networkmanager.enable = true;
     powertop.enable = true;
     powersave.enable = true;
+    
+    # Move to another file?
+    services.logind = {
+      lidSwitch = "suspend";
+      lidSwitchExternalPower = "suspend";
+    };
   };
 } 
