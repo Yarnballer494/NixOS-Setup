@@ -13,6 +13,8 @@ in
     sops.secrets."wifi/olja/psk" = {};  
     sops.secrets."wifi/stud/ssid" = {};
     sops.secrets."wifi/stud/psk" = {};
+    sops.secrets."wifi/unic/ssid" = {};
+    sops.secrets."wifi/unic/psk" = {};
 
     networking.networkmanager = {
       enable = true;
@@ -23,6 +25,8 @@ in
       	  config.sops.secrets."wifi/olja/psk".path
 	        config.sops.secrets."wifi/stud/ssid".path
 	        config.sops.secrets."wifi/stud/psk".path
+          config.sops.secrets."wifi/unic/ssid".path
+          config.sops.secrets."wifi/unic/psk".path
         ];
 
 	      profiles = {
@@ -70,6 +74,28 @@ in
 	            addr-gen-mode = "stable-privacy";
 	          };
 	        };
+          "unic" = {
+            connection = {
+              id = "unic";
+              type = "wifi";
+              autoconnect = true;
+            };
+            wifi = {
+              mode = "infrastructure";
+              ssid = "UNIC_SSID";
+            };
+            wifi-security = {
+              key-mgmt = "wpa-psk";
+              psk = "$STUD_PSK";
+            };
+            ipv4 = {
+              method = "auto";
+            };
+            ipv6 = {
+             method = "auto";
+             addr-gen-mode = "stable-privacy";
+            };
+          };
 	      };
       };
     };

@@ -92,7 +92,7 @@
       yarn = {
         isNormalUser = true;
         # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-        extraGroups = ["wheel"];
+        extraGroups = ["wheel" "suface-control"];
       };
     };
   
@@ -180,5 +180,7 @@
     sddm.enable = true;
     stylix-system.enable = true;
     networkmanager.enable = true;
+    powertop.enable = true;
+    powersave.enable = true;
   };
 } 

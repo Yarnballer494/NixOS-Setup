@@ -16,17 +16,13 @@ in
 		    monitor = if "${hostname}" == "surface" 
 		      then ",preferred,auto,1.6"
 		      else ",preferred,auto,1.6"; # Change to else-if when adding more hosts 
-        
-		    device = if "${hostname}" == "surface" 
-		    then {
-		      # Disabling touchpad because it keeps holding down left click
-		      name = "microsoft-surface-045e:09af-touchpad";
-		      enabled = false;
-		    }
-        else {
-		      # Change to else-if when adding more hosts
-		    };
       
+        general = {
+          border_size = 1;
+          gaps_in = 2;
+          gaps_out = 10;
+        };
+        
 		    xwayland = {
 		      force_zero_scaling = true;
 		    };
@@ -52,7 +48,14 @@ in
 			      new_optimizations = true;
 			      ignore_opacity = false;
 		      };
+          shadow = {
+            enabled = true;
+          };
 		    };
+
+        misc = {
+          vfr = true;
+        };
 		
         bind = [
           # Main binds
@@ -87,6 +90,21 @@ in
           "SUPER, right, movefocus, r"
           "SUPER, up, movefocus, u"
           "SUPER, down, movefocus, d"
+
+          # Bind for power save
+          "SUPER, P, exec, ${pkgs.writeShellScript "hyprlandToggleEffects" ''
+            STATUS=$(hyprctl getoption animations:enabled | awk 'NR==1 {print $2}')
+
+            if [[ "$STATUS" = "1" ]] then
+              hyprctl keyword animations:enabled 0
+              hyprctl keyword decoration:blur:enabled 0
+              hyprctl keyword decoration:shadow:enabled 0
+            else
+              hyprctl keyword animations:enabled 1
+              hyprctl keyword decoration:blur:enabled 1
+              hyprctl keyword decoration:shadow:enabled 1
+            fi
+          ''}"
         ];
 
 		    binde = [
