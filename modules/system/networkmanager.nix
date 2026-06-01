@@ -17,6 +17,8 @@ in
     sops.secrets."wifi/unic/psk" = {};
     sops.secrets."wifi/home/ssid" = {};
     sops.secrets."wifi/home/psk" = {};
+    sops.secrets."wifi/awsm/ssid" = {};
+    sops.secrets."wifi/awsm/psk" = {};
 
     networking.networkmanager = {
       enable = true;
@@ -31,6 +33,8 @@ in
           config.sops.secrets."wifi/unic/psk".path
           config.sops.secrets."wifi/home/ssid".path
           config.sops.secrets."wifi/home/psk".path
+          config.sops.secrets."wifi/awsm/ssid".path
+          config.sops.secrets."wifi/awsm/psk".path
         ];
 
 	      profiles = {
@@ -113,6 +117,28 @@ in
             wifi-security = {
               key-mgmt = "wpa-psk";
               psk = "$HOME_PSK";
+            };
+            ipv4 = {
+              method = "auto";
+            };
+            ipv6 = {
+              method = "auto";
+              addr-gen-mode = "stable-privacy";
+            };
+          };
+          "awsm" = {
+            connection = {
+              id = "awsm";
+              type = "wifi";
+              autoconnect = true;
+            };
+            wifi = {
+              mode = "infrastructure";
+              ssid = "$AWSM_SSID";
+            };
+            wifi-security = {
+              key-mgmt = "wpa-psk";
+              psk = "$AWSM_PSK";
             };
             ipv4 = {
               method = "auto";
